@@ -1,5 +1,14 @@
 const dataObject = {
   1: {
-    content: "default",
+    name: "Fido",
+    type: "dog",
+    nature: "playful",
+    status: "available",
+  },
+  2: {
+    name: "Benson",
+    type: "cat",
+    nature: "jittery",
+    status: "homed",
   },
 };
