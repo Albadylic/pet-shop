@@ -1,4 +1,4 @@
-const availablePets = document.querySelector(".avail-pets");
+const availablePets = document.querySelector(".available-pets");
 const homedPets = document.querySelector(".homed-pets");
 
 // Function to add an element to the page
@@ -19,10 +19,14 @@ const renderOneElement = (dataEntry) => {
   img.alt = `An image of a ${animalType}`;
   article.appendChild(img);
 
-  const nature = document.createElement("p");
-  const natureText = document.createTextNode(dataEntry.nature);
-  nature.appendChild(natureText);
-  article.appendChild(nature);
+  const description = document.createElement("p");
+  const descriptionText = document.createTextNode(
+    `${dataEntry.name} is a ${dataEntry.nature} ${dataEntry.type}`
+  );
+  description.appendChild(descriptionText);
+  article.appendChild(description);
+
+  article.classList.add("pet-card");
 
   parent.appendChild(article);
 };
@@ -44,4 +48,5 @@ const renderAll = () => {
   }
 };
 
+// Run this function to add the data to the page when it loads
 renderAll();
