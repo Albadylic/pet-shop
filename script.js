@@ -34,4 +34,14 @@ function checkType(dataEntry) {
   return dataEntry.status === "available" ? availablePets : homedPets;
 }
 
-// Function to render all data, Iterate and run RenderOneElement for all
+// Function to render all data, iterate and run renderOneElement for all
+
+const renderAll = () => {
+  // Iterate through object
+  for (const entry of Object.entries(dataObject)) {
+    // Pass each entry to renderOneElement
+    renderOneElement(entry[1]);
+  }
+};
+
+renderAll();
