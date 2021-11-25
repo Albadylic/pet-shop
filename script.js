@@ -3,8 +3,9 @@ const homedPets = document.querySelector(".homed-pets");
 
 // Function to add an element to the page
 
-const renderOneElement = (dataEntry, parent) => {
+const renderOneElement = (dataEntry) => {
   let article = document.createElement("article");
+  const parent = checkType(dataEntry);
 
   let title = document.createElement("h3");
   let titleText = document.createTextNode(dataEntry.name);
@@ -27,5 +28,10 @@ const renderOneElement = (dataEntry, parent) => {
 };
 
 // Function to check the status, pass parent to renderOneElement
+// Written with `function` syntax to hoist it
+
+function checkType(dataEntry) {
+  return dataEntry.status === "available" ? availablePets : homedPets;
+}
 
 // Function to render all data, Iterate and run RenderOneElement for all
