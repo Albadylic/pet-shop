@@ -1,4 +1,4 @@
-const dataObject = {
+let dataObject = {
   1: {
     name: "Fido",
     type: "dog",
